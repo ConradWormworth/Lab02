@@ -9,9 +9,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Super Cool Age Calculator</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Please enter your current age</h1>
+        <form method="post" action="">
+            Current Age: <input type="text" name="firstname" value="${fname}"><br>
+            <input type="submit" value="Submit">
+        </form>
     </body>
 </html>
