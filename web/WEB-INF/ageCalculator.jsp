@@ -13,9 +13,12 @@
     </head>
     <body>
         <h1>Please enter your current age</h1>
-        <form method="post" action="">
-            Current Age: <input type="text" name="firstname" value="${fname}"><br>
+        <form method="post" action="age">
+            Current Age: <input type="text" name="currentAge" value="${currentAge}"><br>
             <input type="submit" value="Submit">
         </form>
+            <div name="messageArea">
+                ${message}
+            </div>
     </body>
 </html>

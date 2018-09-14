@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 
+package servlets;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -26,10 +28,13 @@ public class AgeCalculatorServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String currentAge = request.getParameter("currentAge");
+        int numberedAge = 0;
+        
+        request.setAttribute("currentAge", currentAge);
         try 
         { 
             // checking valid integer using parseInt() method 
-            int numberedAge = Integer.parseInt(currentAge); 
+            numberedAge = Integer.parseInt(currentAge); 
         }  
         catch (NumberFormatException e)  
         { 
@@ -41,13 +46,10 @@ public class AgeCalculatorServlet extends HttpServlet {
         
         // Always strings!!! Have to convert if we want primitive data
         
-        if (currentAge == null || currentAge.equals(""))  {
-            request.setAttribute("message", "Please enter both values.");
-            getServletContext().getRequestDispatcher("/WEB-INF/ageCalculator.jsp").forward(request, response);
-            return;
-        }
+
         
-          request.setAttribute("message", "Your age on your next birthday will be " + (currentAge + 1));
+          request.setAttribute("message", "Your age on your next birthday will be " + (numberedAge + 1));
+   
 
         getServletContext().getRequestDispatcher("/WEB-INF/ageCalculator.jsp").forward(request, response);   
     }
