@@ -19,6 +19,7 @@
         </form>
             <div name="messageArea">
                 ${message}
-            </div>
+            </div><br>
+            <a href="arithmetic">~Arithmetic Calculator~</a>
     </body>
 </html>
